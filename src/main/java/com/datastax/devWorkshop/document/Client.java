@@ -1,4 +1,4 @@
-package com.datastax.devWorkshop;
+package com.datastax.devWorkshop.document;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -13,7 +13,7 @@ import java.net.http.HttpResponse;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 
-public class DocumentAPIClient {
+public class Client {
     private final ObjectMapper mapper;
     private final HttpClient client;
 
@@ -24,7 +24,7 @@ public class DocumentAPIClient {
     private final String restEndpointTemplate = "https://%s-%s.apps.astra.datastax.com/api/rest/v2/namespaces/%s/collections";
     private final String restEndPointURI;
 
-    public DocumentAPIClient() {
+    public Client() {
         mapper = new ObjectMapper();
         client = HttpClient
                 .newBuilder()
